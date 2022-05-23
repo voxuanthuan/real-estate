@@ -1,0 +1,23 @@
+.cardContainer {
+    padding: 20px;
+    background-color: #f1f1f1;
+    border: 1px solid #CCC;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    .cardHeader {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 10px;
+    }
+    .title {
+        color: rgb(73, 73, 251);
+        font-weight: 700;
+        margin: 0;
+    }
+    .desciprtion {
+        color: #b4b4b4;
+        font-size: 12px;
+        text-align: center;
+    }
+}
