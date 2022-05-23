@@ -1,5 +1,5 @@
 import React from 'react'
-import { Bar } from 'react-chartjs-2';
+import { Bar, Line } from 'react-chartjs-2';
 import {
 Chart as ChartJS,
 CategoryScale,
@@ -8,6 +8,9 @@ BarElement,
 Title,
 Tooltip,
 Legend,
+PointElement,
+LineElement,
+Filler
 } from 'chart.js';
 import styles from './styles.module.scss'
 
@@ -15,15 +18,28 @@ ChartJS.register(
   CategoryScale,
   LinearScale,
   BarElement,
+  PointElement,
+  LineElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
+  Filler,
 );
 
-function ChartBar () {
 
+interface IProps {
+  color: string,
+  type: string,
+  label: string,
+  borderColor: string,
+}
+
+function ChartBar (props: IProps) {
+  const {color, type, label, borderColor} = props
   const options = {
+    type: 'line',
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: 'top' as const,
@@ -36,17 +52,19 @@ function ChartBar () {
     labels,
     datasets: [
       {
-        label: 'Độ năng động của thị trường',
+        label: label,
         data: labels.map(() => Math.random() * 1000),
-        backgroundColor: '#4881ea',
-        borderColor: '#3877eb',
+        backgroundColor: color,
+        borderColor: borderColor,
         borderWidth: 2,
         borderRadius: 20,
+        fill: true,
+        tension: 0,
       },
     ],
   };
 
-  return <Bar options={options} data={data}/>
+  return type === 'bar' ? <Bar options={options} data={data}/> : <Line options={options} data={data}/>
 }
 
 export default React.memo(ChartBar)

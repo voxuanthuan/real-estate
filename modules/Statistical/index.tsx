@@ -2,20 +2,30 @@ import React from 'react'
 import Chart from './components/chart-bar'
 import styles from './styles.module.scss'
 
-function StatisticalCard() {
+interface IProps {
+  color: string,
+  type: string,
+  title: string,
+  description: string,
+  label: string
+  borderColor: string,
+}
+
+function StatisticalCard(props: IProps) {
+  const {color, type, title, description, label, borderColor} = props
   return (<div className={styles.cardContainer}>
     <div className={styles.cardHeader}>
       <div className={styles.cardTitle}>
-        <h4 className={styles.title}>THỐNG KÊ SỐ LƯỢN BÀI ĐĂNG THEO KHU VỰC</h4>
-        <p className={styles.desciprtion}>Đánh giá độ năng động của thị trường theo khu vực cụ thể</p>
+        <h4 className={styles.title}>{title}</h4>
+        <p className={styles.desciprtion}>{description}</p>
       </div>
       <div className={styles.selector}>
-        <select>Chọn Tỉnh</select>
-        <select>Chọn QUận huyện</select>
+        <select ><option value="" >Chọn tỉnh</option></select>
+        <select><option value="" >Chọn QUận huyện</option></select>
       </div>
     </div>
-    <div className={styles.chartBar}>
-      <Chart />
+    <div className={styles.chartContainer}>
+      <Chart label={label} type={type} color={color} borderColor={borderColor}/>
     </div>
   </div>)
 }

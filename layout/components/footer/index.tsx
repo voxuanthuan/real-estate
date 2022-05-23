@@ -6,24 +6,24 @@ function Footer() {
     return <footer className={styles.footer}>
         <div className={styles.footerWrapper}>
             <div className={styles.infoContainer}>
-                <div className={styles.Info}>
+                <div className={styles.info}>
                     <b className={styles.footerTitle}>VỀ CHÚNG TÔI</b>
                     <p>Đội ngũ đồng hành</p>
                     <p>Môi trường làm việc</p>
                     <p>Chính sách &nbsp; điều khoản</p>
                 </div>
-                <div className={styles.Info}>
+                <div className={styles.info}>
                     <b className={styles.footerTitle}>HODACE PREMIUM</b>
                     <p>Dữ liệu bất động sản</p>
                     <p>Tra cứu gói vay</p>
                     <p>Tra cứu chủ nhà</p>
                     <p>Tra cứu hoạt động người dùng</p>
                 </div>
-                <div className={styles.Info}>
+                <div className={styles.info}>
                     <b className={styles.footerTitle}>LIÊN HỆ DỊCH VỤ</b>
                     <p><ZaloIcon /><MessengerIcon /></p>
                 </div>
-                <div className={styles.Info}>
+                <div className={styles.info}>
                     <b className={styles.footerTitle}>LIÊN KẾT</b>
                     <div className={styles.socialMedia}>
                         <p>Mạng xã hội: </p>
